@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>LogIn</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<header></header>
+<body>
+    <center>
+    <div id="form">
+    <form action="record.php" method="post">
+        <table>
+			<tr>
+				<td><label>Name of Institution</label></td>
+				<td><input type="text" name="instaName"></td>
+			</tr>
+			<tr>
+				<td><label>Type of Institution</label></td>
+				<td>
+					<select name="instaType">
+						<option value="none"></option>
+						<option value="school">school</option>
+						<option value="company">company</option>
+					</select>
+				</td>
+			</tr>	
+			<tr>
+				<td><label>Occupation</label></td>
+				<td><input type="text" name="occupation"></td>
+			</tr>
+			<tr>
+				<td><label>Last Name</label></td>
+				<td><input type="text" name="lastName"></td>
+			</tr>
+			<tr>
+				<td><label>First Name</label></td>
+				<td><input type="text" name="firstName"></td>
+			</tr>
+			<tr>
+				<td><label>Contact Number</label></td>
+				<td><input type="text" name="contactNum"></td>
+			</tr>
+			<tr>
+				<td><label>Date of Visit</label></td>
+				<td><input name="visitDate" type="date" autocomplete="off"></td>
+			</tr>
+			<tr>
+				<td><label>Purpose of Visit</label></td>
+				<td><textarea name="purpose"></textarea></td>
+			</tr>
+		</table>
+        <div id="func-buttons">
+        	<input type="submit" value="Submit" >
+        	<input type="button" value="Clear">
+        </div>
+    </form>
+    </div>
+	</center>
+	<!-- PHP Script -->
+	<?php
+		$institution_name = $_POST['instaName'];
+		$institution_type = $_POST['instaType'];
+		$occupation = $_POST['occupation'];
+		$last_name = $_POST['lastName'];
+		$first_name = $_POST['firstName'];
+		$contact_num = $_POST['contactNum'];
+		$visit_date = $_POST['visitDate'];
+		$purpose_visit = $_POST['purpose'];
+	
+	?>
+	<!-- end of PHP Script -->
+</body>
+</html>

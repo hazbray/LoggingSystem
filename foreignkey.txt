@@ -1,0 +1,39 @@
+DROP TABLE `institution`;
+
+CREATE TABLE `institution` (
+  `iid` int NOT NULL auto_increment,
+  `instaname` varchar(30) NOT NULL,
+  `instatype` varchar(30) NOT NULL,  
+  PRIMARY KEY  (`iid`)
+);
+
+DROP TABLE `person`;
+CREATE TABLE `person` (
+  `pid` int NOT NULL auto_increment,
+  `lname` varchar(30) NOT NULL,
+  `fname` varchar(30) NOT NULL,  
+  `occupation` varchar(50) NOT NULL,
+   `contact_num` int NOT NULL,
+   `contact_num` int NOT NULL,
+  `institution_id` int,
+  PRIMARY KEY  (`pid`)
+);
+
+ALTER TABLE `person` 
+ADD CONSTRAINT `FK_person`
+ FOREIGN KEY  (`institution_id`) REFERENCES institution(`iid`);
+
+DROP TABLE `visit`;
+CREATE TABLE `visit` (
+  `vid` int NOT NULL auto_increment,
+  `date` date NOT NULL,
+  `purpose` varchar(100) NOT NULL,  
+  `person_id` int,
+  PRIMARY KEY  (`vid`)
+);
+
+ALTER TABLE `visit` 
+ADD CONSTRAINT `FK_visit`
+ FOREIGN KEY  (`person_id`) REFERENCES person(`pid`);
+
+ ALTER TABLE `person` ADD `contact_num` int NOT NULL;
