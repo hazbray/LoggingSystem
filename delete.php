@@ -1,7 +1,7 @@
 <?php
 //including the database connection file
-$connection = mysqli_connect("localhost","root","","loggingsystem");
-
+//$connection = mysqli_connect("localhost","root","","loggingsystem");
+require_once dirname(__FILE__) . '/config.php';
 //getting id of the data from url
 $id = $_GET['id'];
 

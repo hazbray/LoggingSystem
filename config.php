@@ -1,5 +1,14 @@
 <?php
-$connection = mysqli_connect("localhost","root","","loggingsystem") 
-or die("ERROR");
-@mysql_select_db("loggingsystem",$connection);
+// Inialize session
+session_start();
+
+// Check, if username session is NOT set then this page will jump to login page
+if (!isset($_SESSION['username'])) {
+header('Location: index.php');
+}
+////////
+
+$connection = mysqli_connect("localhost","root","","loggingsystem");
+
+
 ?>
